@@ -26,6 +26,19 @@ namespace IdentityServeSample.Api
 
         public IConfiguration Configuration { get; }
 
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+
+            services.AddAuthentication("Bearer")
+                    .AddJwtBearer("Bearer", options =>
+                    {
+                        options.Authority = "http://localhost:5000";
+                        options.RequireHttpsMetadata = false;
+                        options.Audience = "MyApi";
+                    });
+        }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -44,23 +57,6 @@ namespace IdentityServeSample.Api
             {
                 endpoints.MapControllers();
             });
-        }
-
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-
-            services.AddAuthentication("Bearer")
-                    .AddJwtBearer("Bearer", options =>
-                    {
-                        options.Authority = "http://localhost:5000";
-                        options.RequireHttpsMetadata = false;
-                        options.Audience = "api1";
-                        options.TokenValidationParameters = new TokenValidationParameters
-                        {
-                            ValidateAudience = false
-                        };
-                    });
         }
     }
 }

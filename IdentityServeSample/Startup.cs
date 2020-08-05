@@ -21,7 +21,7 @@ namespace IdentityServeSample
             services.AddControllers();
 
             services.AddIdentityServer()
-                    .AddInMemoryApiResources(IdentityConfig.GetResources())
+                    .AddInMemoryApiResources(IdentityConfig.GetApiResources())
                     .AddInMemoryApiScopes(IdentityConfig.GetScopes())
                     .AddInMemoryClients(IdentityConfig.GetClients())
                     .AddInMemoryIdentityResources(IdentityConfig.GetIdentityResources())

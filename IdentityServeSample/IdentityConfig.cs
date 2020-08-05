@@ -14,11 +14,18 @@ namespace IdentityServeSample
             };
         }
 
-        public static IEnumerable<ApiResource> GetResources()
+        public static IEnumerable<ApiResource> GetApiResources()
         {
             return new[]
             {
-                new ApiResource("api1", "my api")
+                new ApiResource("MyApi", "My Api")
+                {
+                    Scopes = new List<string>()
+                    {
+                        "MyApi.inner",
+                        "MyApi.company"
+                    }
+                }
             };
         }
 
@@ -32,9 +39,12 @@ namespace IdentityServeSample
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets =
                     {
-                        new Secret("secret".Sha256()),
+                        new Secret("BA5D32BB0CF9498CA591D38ABA95DC88".Sha256()),
                     },
-                    AllowedScopes = { "api1" }
+                    AllowedScopes =
+                    {
+                        "MyApi.inner"
+                    }
                 }
             };
         }
@@ -43,10 +53,8 @@ namespace IdentityServeSample
         {
             return new List<ApiScope>()
             {
-                new ApiScope()
-                {
-                    Name = "api1",
-                }
+                new ApiScope() { Name = "MyApi.inner",DisplayName = "inner use."},
+                new ApiScope() { Name = "MyApi.company",DisplayName = "company use."},
             };
         }
     }
