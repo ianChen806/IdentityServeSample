@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,7 +24,9 @@ namespace IdentityServeSample
                     .AddInMemoryApiResources(IdentityConfig.GetResources())
                     .AddInMemoryApiScopes(IdentityConfig.GetScopes())
                     .AddInMemoryClients(IdentityConfig.GetClients())
+                    .AddInMemoryIdentityResources(IdentityConfig.GetIdentityResources())
                     .AddDeveloperSigningCredential();
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

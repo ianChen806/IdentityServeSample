@@ -18,7 +18,7 @@ namespace IdentityServeSample
         {
             return new[]
             {
-                new ApiResource("api1", "MY API")
+                new ApiResource("api1", "my api")
             };
         }
 
@@ -45,7 +45,7 @@ namespace IdentityServeSample
             {
                 new ApiScope()
                 {
-                    Name = "api1"
+                    Name = "api1",
                 }
             };
         }
