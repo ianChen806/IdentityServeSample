@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServeSample", "IdentityServeSample\IdentityServeSample.csproj", "{BD5E2EC8-A815-4094-9EBB-B7286754BA36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServeSample.Client", "IdentityServeSample.Client\IdentityServeSample.Client.csproj", "{E3E11423-6E9F-4B3C-984F-8051108DAA2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServeSample.Api", "IdentityServeSample.Api\IdentityServeSample.Api.csproj", "{1F7E9A87-0687-404D-8C93-8C5EAD2AFB0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD5E2EC8-A815-4094-9EBB-B7286754BA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5E2EC8-A815-4094-9EBB-B7286754BA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5E2EC8-A815-4094-9EBB-B7286754BA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5E2EC8-A815-4094-9EBB-B7286754BA36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E11423-6E9F-4B3C-984F-8051108DAA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E11423-6E9F-4B3C-984F-8051108DAA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E11423-6E9F-4B3C-984F-8051108DAA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E11423-6E9F-4B3C-984F-8051108DAA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7E9A87-0687-404D-8C93-8C5EAD2AFB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7E9A87-0687-404D-8C93-8C5EAD2AFB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7E9A87-0687-404D-8C93-8C5EAD2AFB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7E9A87-0687-404D-8C93-8C5EAD2AFB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
