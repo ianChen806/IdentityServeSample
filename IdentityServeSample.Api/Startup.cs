@@ -36,6 +36,25 @@ namespace IdentityServeSample.Api
                         options.Authority = "http://localhost:5000";
                         options.RequireHttpsMetadata = false;
                         options.Audience = "MyApi";
+                        // options.Events = new JwtBearerEvents
+                        // {
+                        //     //AccessToken 验证失败
+                        //     OnChallenge = op =>
+                        //     {
+                        //         //跳过所有默认操作
+                        //         op.HandleResponse();
+                        //         //下面是自定义返回消息
+                        //         //op.Response.Headers.Add("token", "401");
+                        //         op.Response.ContentType = "application/json";
+                        //         op.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                        //         op.Response.WriteAsync(JsonConvert.SerializeObject(new
+                        //         {
+                        //             status = StatusCodes.Status401Unauthorized,
+                        //             msg = "token无效"
+                        //         }));
+                        //         return Task.CompletedTask;
+                        //     }
+                        // };
                     });
         }
 
@@ -45,8 +64,6 @@ namespace IdentityServeSample.Api
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
