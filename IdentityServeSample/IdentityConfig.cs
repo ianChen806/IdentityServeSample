@@ -44,7 +44,7 @@ namespace IdentityServeSample
                     AllowedScopes =
                     {
                         "MyApi.inner"
-                    }
+                    },
                 }
             };
         }
@@ -53,8 +53,8 @@ namespace IdentityServeSample
         {
             return new List<ApiScope>()
             {
-                new ApiScope() { Name = "MyApi.inner",DisplayName = "inner use."},
-                new ApiScope() { Name = "MyApi.company",DisplayName = "company use."},
+                new ApiScope() { Name = "MyApi.inner", DisplayName = "inner use." },
+                new ApiScope() { Name = "MyApi.company", DisplayName = "company use." },
             };
         }
     }
