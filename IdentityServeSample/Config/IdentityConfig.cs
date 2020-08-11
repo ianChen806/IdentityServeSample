@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using IdentityServer4;
 using IdentityServer4.Models;
 
-namespace IdentityServeSample
+namespace IdentityServeSample.Config
 {
     public class IdentityConfig
     {
@@ -43,8 +44,29 @@ namespace IdentityServeSample
                     },
                     AllowedScopes =
                     {
-                        "MyApi.inner"
+                        "MyApi",
                     },
+                },
+                new Client
+                {
+                    ClientName = "Resource Owner Flow",
+                    ClientId = "resource_owner_flow",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets =
+                    {
+                        new Secret("resource_owner_flow_secret".Sha256())
+                    },
+                    AllowedScopes =
+                    {
+                        "MyApi",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        // IdentityServerConstants.StandardScopes.OfflineAccess
+                    },
+                    // AllowOfflineAccess = true,
+                    // RefreshTokenUsage = TokenUsage.ReUse,
+                    // AccessTokenLifetime = 18000,
+                    // RefreshTokenExpiration = TokenExpiration.Absolute,
+                    // AbsoluteRefreshTokenLifetime = 300,
                 }
             };
         }
@@ -53,6 +75,7 @@ namespace IdentityServeSample
         {
             return new List<ApiScope>()
             {
+                new ApiScope() { Name = "MyApi", DisplayName = "inner use." },
                 new ApiScope() { Name = "MyApi.inner", DisplayName = "inner use." },
                 new ApiScope() { Name = "MyApi.company", DisplayName = "company use." },
             };
