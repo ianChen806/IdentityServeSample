@@ -60,13 +60,13 @@ namespace IdentityServeSample.Config
                     {
                         "MyApi",
                         IdentityServerConstants.StandardScopes.OpenId,
-                        // IdentityServerConstants.StandardScopes.OfflineAccess
+                        IdentityServerConstants.StandardScopes.OfflineAccess
                     },
-                    // AllowOfflineAccess = true,
-                    // RefreshTokenUsage = TokenUsage.ReUse,
-                    // AccessTokenLifetime = 18000,
-                    // RefreshTokenExpiration = TokenExpiration.Absolute,
-                    // AbsoluteRefreshTokenLifetime = 300,
+                    AllowOfflineAccess = true,
+                    RefreshTokenUsage = TokenUsage.ReUse,
+                    AccessTokenLifetime = 18000,
+                    RefreshTokenExpiration = TokenExpiration.Absolute,
+                    AbsoluteRefreshTokenLifetime = 300,
                 }
             };
         }
