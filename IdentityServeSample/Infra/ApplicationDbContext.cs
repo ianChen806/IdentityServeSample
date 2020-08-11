@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace IdentityServeSample
+namespace IdentityServeSample.Infra
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
