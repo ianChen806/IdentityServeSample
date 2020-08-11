@@ -10,11 +10,21 @@ namespace IdentityServeSample.Client.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet]
-        public async Task<string> Test()
+        public async Task<string> TestAdmin()
         {
             var endpointUrl = await EndpointUrl();
             var accessToken = await AccessToken(endpointUrl);
-            var response = await CallApi(accessToken);
+            var response = await CallApi(accessToken, "Test");
+
+            return response;
+        }
+
+        [HttpGet]
+        public async Task<string> TestUser()
+        {
+            var endpointUrl = await EndpointUrl();
+            var accessToken = await AccessToken(endpointUrl);
+            var response = await CallApi(accessToken, "TestUser");
 
             return response;
         }
@@ -38,12 +48,12 @@ namespace IdentityServeSample.Client.Controllers
             return tokenResponse.AccessToken;
         }
 
-        private static async Task<string> CallApi(string accessToken)
+        private static async Task<string> CallApi(string accessToken, string action)
         {
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(accessToken);
 
-            var response = await apiClient.GetAsync("http://localhost:5002/Home/Test");
+            var response = await apiClient.GetAsync($"http://localhost:5002/Home/{action}");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
